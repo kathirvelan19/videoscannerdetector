@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Forensic Intelligence System</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="bg-overlay"></div>
+
+<div class="container">
+
+    <div class="header">
+        <h1>🔍 FORENSIC AI ANALYSIS SYSTEM</h1>
+        <p>Upload CCTV footage for intelligent event reconstruction</p>
+    </div>
+
+    <div class="card">
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+
+            <label>📁 Upload CCTV Footage</label>
+            <input type="file" name="video" required>
+
+            <label>⏱ Event Time Range (Optional)</label>
+            <div class="time-box">
+                <input type="time" name="start_time">
+                <span>to</span>
+                <input type="time" name="end_time">
+            </div>
+
+            <label>📍 Case ID (Optional)</label>
+            <input type="text" name="case_id" placeholder="FT-2026-001">
+
+            <button type="submit">RUN FORENSIC ANALYSIS</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
